@@ -16,20 +16,7 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 
 ### System Architecture
 
-User Browser (HTML)
-|
-v
-JSON commands / state
-^
-|
-Python Backend on CM5
-(MQTT client + PLC interface)
-^
-|
-Mosquitto MQTT Broker
-^
-|
-Siemens LOGO! PLC
+<img width="1536" height="1024" alt="ChatGPT Image Dec 19, 2025, 07_51_00 PM" src="https://github.com/user-attachments/assets/451a7413-5cbb-4a2f-a4ef-f0e30399d106" />
 
 ### Hardware Platform
 

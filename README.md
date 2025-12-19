@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project aims to build an **embedded control system** using **Buildroot** on the **Raspberry Pi Compute Module 5 (CM5)**. The system communicates with a **Siemens LOGO! PLC** via **MQTT** and allows users to:
+This project aims to build an **embedded control system** using **Buildroot** on the **Raspberry Pi Compute Module 5 (CM5)**. The system communicates with a **Siemens LOGO! PLC** via **MQTT** and allows the user to:
 
 - **Monitor PLC input states** in real time  
 - **Control PLC outputs** (turn on/off) from a **web interface** deployed on GitHub  
@@ -16,7 +16,7 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 
 ### System Architecture
 
-<img width="1536" height="1024" alt="ChatGPT Image Dec 19, 2025, 07_51_00 PM" src="https://github.com/user-attachments/assets/451a7413-5cbb-4a2f-a4ef-f0e30399d106" />
+<img width="1536" height="1024" alt="ChatGPT Image Dec 19, 2025, 07_51_00 PM" src="https://github.com/user-attachments/assets/2924efec-a31d-43e8-a143-d78da5fd88c2" />
 
 ### Hardware Platform
 
@@ -26,14 +26,15 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
   - Optional Wi-Fi / Bluetooth  
   - RAM: 4GB or 8GB  
 - **Siemens LOGO! PLC**  
-- **CM5 Carrier Board** for Ethernet/Wi-Fi and GPIO connections
+- **CM5 Carrier Board** for Ethernet/Wi-Fi and GPIO connections  
+- **Buildroot Support**: Cross-compilation with custom Linux image including Python, networking, and MQTT packages  
 
 ### Build System
 
 - **Buildroot** to create a lightweight Linux image including:
   - Python 3 and required libraries  
   - Mosquitto MQTT broker  
-  - Networking utilities
+  - Networking utilities  
 
 ### Software Components
 
@@ -41,6 +42,25 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Python backend** – subscribes to PLC MQTT topics, controls outputs, updates JSON for web interface  
 - **HTML/JavaScript frontend** – deployed on GitHub Pages  
 - **GitHub Gist (optional)** – JSON storage for PLC state  
+
+### Open Source Projects / Packages
+
+- **Python GPIO library** – for controlling switches  
+- **Python** – backend and optionally frontend scripts  
+- **HTML / CSS** – frontend web interface  
+- **GitHub Gist API** – to send real-time updates of PLC states  
+
+### Previous Assignment Content
+
+- **Buildroot setup** – cross-compiling Linux images for Raspberry Pi  
+- **Running an application on startup** – using init scripts or systemd  
+
+### New Content Beyond Course
+
+- Use **Python as backend** to communicate with PLC and MQTT  
+- Connect the embedded system to the network for web access  
+- Use **MQTT** for communication between CM5 and PLC  
+- Run **MQTT broker** on the system to enable real-time input/output updates  
 
 ### Functionality
 
@@ -79,7 +99,9 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Frontend Repository** – HTML/JS web interface  
 - Links to repositories to be added after creation
 
-### References
+---
+
+## References
 
 - [Raspberry Pi Compute Module 5](https://www.raspberrypi.com/products/compute-module-5/)  
 - [Buildroot Official Documentation](https://buildroot.org/)  

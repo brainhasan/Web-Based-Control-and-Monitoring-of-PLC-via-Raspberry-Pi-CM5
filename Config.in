@@ -1,0 +1,13 @@
+#
+# My external Buildroot configuration
+#
+
+menu "External buildroot options"
+
+config BR2_EXTERNAL_MY_EXTERNAL
+    bool "Enable my external"
+    help
+      This enables my external Buildroot packages and settings.
+
+endmenu
+

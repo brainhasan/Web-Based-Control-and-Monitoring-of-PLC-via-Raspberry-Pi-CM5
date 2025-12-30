@@ -73,15 +73,10 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
 
 
-### Repositories Structure
+### Repositories Structure and  Organization
 
-Repository Organization
-Single repository used for:
-Buildroot configuration
-Python backend
-Web frontend
-Documentation & Wiki
-No additional repositories are required
+Single repository used for: Buildroot configuration , Python backend , Web frontend , Documentation & Wiki
+** No additional repositories are required
 
 ---
 

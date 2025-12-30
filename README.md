@@ -105,14 +105,6 @@ No additional repositories are required
 - Test full system: PLC ↔ CM5 ↔ Website  
 - Deploy frontend on GitHub Pages
 
----
-
-## Repository Structure
-
-- **Buildroot Repository** – Linux image setup, packages  
-- **Backend Repository** – Python scripts for MQTT and PLC interface  
-- **Frontend Repository** – HTML/JS web interface  
-- Links to repositories to be added after creation
 
 ---
 

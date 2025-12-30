@@ -68,6 +68,21 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Control PLC outputs** → web interface → JSON → Python backend → MQTT → PLC  
 - **Real-time synchronization**: changes from PLC or website are immediately reflected
 
+### Team Members & Roles
+
+Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
+
+
+### Repositories Structure
+
+Repository Organization
+Single repository used for:
+Buildroot configuration
+Python backend
+Web frontend
+Documentation & Wiki
+No additional repositories are required
+
 ---
 
 ## Implementation Plan

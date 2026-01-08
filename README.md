@@ -92,6 +92,7 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 
 ---
 
+
 ## Repository Structure
 
 - **Buildroot Repository** – Linux image setup, packages  
@@ -99,6 +100,19 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Frontend Repository** – HTML/JS web interface  
 - Links to repositories to be added after creation
 
+## Repository Structure and Organization
+
+Single repository used for:
+
+Buildroot configuration
+
+Python backend
+
+Web frontend
+
+## Documentation & Wiki
+Team Members & Roles
+Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
 ---
 
 ## References

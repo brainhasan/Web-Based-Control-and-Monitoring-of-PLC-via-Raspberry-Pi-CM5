@@ -1,0 +1,9 @@
+# Loopback interface
+auto lo
+iface lo inet loopback
+
+# Ethernet (DHCP)
+auto eth0
+iface eth0 inet dhcp
+    # Optional: Wait for link before trying DHCP
+    pre-up sleep 2

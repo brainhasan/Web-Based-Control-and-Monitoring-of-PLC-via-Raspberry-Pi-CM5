@@ -1,0 +1,68 @@
+name: Buildroot CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    #  Projekt auschecken
+    - name: Checkout project
+      uses: actions/checkout@v4
+
+    #  Buildroot-Abhängigkeiten installieren
+    - name: Install build dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y \
+          build-essential \
+          gcc \
+          g++ \
+          make \
+          libncurses5-dev \
+          libncursesw5-dev \
+          git \
+          wget \
+          cpio \
+          unzip \
+          rsync \
+          bc \
+          python3 \
+          file
+
+    #  Buildroot (main branch) klonen
+    - name: Clone Buildroot
+      run: |
+        git clone --depth=1 https://github.com/buildroot/buildroot.git
+
+    #  Cache für Buildroot-Downloads
+    - name: Cache Buildroot downloads
+      uses: actions/cache@v4
+      with:
+        path: buildroot/dl
+        key: buildroot-dl-${{ runner.os }}
+        restore-keys: |
+          buildroot-dl-${{ runner.os }}-
+
+    #  Buildroot mit externem Defconfig konfigurieren
+    - name: Configure Buildroot (external defconfig)
+      run: |
+        cd buildroot
+        make BR2_EXTERNAL=../external my_cm5_defconfig
+
+    #  Buildroot bauen
+    - name: Build Buildroot
+      run: |
+        cd buildroot
+        make BR2_EXTERNAL=../external -j$(nproc)
+
+    # 7️⃣ Images als Artefakte hochladen
+    - name: Upload Buildroot images
+      uses: actions/upload-artifact@v4
+      with:
+        name: buildroot-images
+        path: buildroot/output/images

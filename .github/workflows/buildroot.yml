@@ -58,7 +58,7 @@ jobs:
     - name: Build Buildroot
       run: |
         cd buildroot
-        make -j$(nproc)
+        make BR2_EXTERNAL=../external -j$(nproc)
 
     # 7️⃣ Images als Artefakte hochladen
     - name: Upload Buildroot images

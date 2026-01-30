@@ -13,8 +13,11 @@ jobs:
     # Projekt auschecken inklusive Submodule
     - name: Checkout project
       uses: actions/checkout@v4
-      with:
-        submodules: true  
+    - name: Clone Buildroot submodule
+      run: |
+       git clone https://github.com/buildroot/buildroot.git buildroot
+       cd buildroot
+       git checkout master 
 
     # Buildroot-Abhängigkeiten installieren
     - name: Install build dependencies

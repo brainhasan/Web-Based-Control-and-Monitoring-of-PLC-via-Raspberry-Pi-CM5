@@ -18,3 +18,6 @@ display_auto_detect=1
 
 # Initialize the DWC2 USB controller (common for Compute Modules)
 dtoverlay=dwc2,dr_mode=host
+
+
+

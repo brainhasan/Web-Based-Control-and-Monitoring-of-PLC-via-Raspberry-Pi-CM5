@@ -1,22 +1,23 @@
-# Web-Based Control and Monitoring of PLC via Raspberry Pi CM5
+# Lightweight Industrial SCADA System Using Buildroot on Raspberry Pi CM5 and PLC
 
 ## Project Overview
 
 This project aims to build an **embedded control system** using **Buildroot** on the **Raspberry Pi Compute Module 5 (CM5)**. The system communicates with a **Siemens LOGO! PLC** via **MQTT** and allows the user to:
 
 - **Monitor PLC input states** in real time  
-- **Control PLC outputs** (turn on/off) from a **web interface** deployed on GitHub  
+- **Control PLC outputs (turn on/off)** from a web interface using MQTT over HiveMQ 
 
 ### Communication Flow
 
-- **PLC ↔ Raspberry Pi CM5**: via MQTT  
-- **Website ↔ Raspberry Pi CM5**: via JSON  
+- **PLC ↔ Raspberry Pi CM5** : via MQTT (Local Broker / Ethernet)
+- **Raspberry Pi CM5 ↔ HiveMQ**: via MQTT (Wi-Fi)
+- **Website ↔ HiveMQ: via MQTT** over WebSockets
 
 The system enables users to remotely monitor and control PLC inputs and outputs using a lightweight embedded Linux system.
 
 ### System Architecture
 
-<img width="1536" height="1024" alt="ChatGPT Image Dec 19, 2025, 07_51_00 PM" src="https://github.com/user-attachments/assets/2924efec-a31d-43e8-a143-d78da5fd88c2" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/45ab72cd-02b6-426a-a1e7-308bcde430eb" />
 
 ### Hardware Platform
 
@@ -34,19 +35,20 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Buildroot** to create a lightweight Linux image including:
   - Python 3 and required libraries  
   - Mosquitto MQTT broker  
-  - Networking utilities  
+  - Networking utilities
+  - Wi-Fi drivers and required binary firmware  
 
 ### Software Components
 
 - **Mosquitto MQTT broker** – PLC ↔ CM5 communication  
-- **Python backend** – subscribes to PLC MQTT topics, controls outputs, updates JSON for web interface  
-- **HTML/JavaScript frontend** – deployed on GitHub Pages  
-- **GitHub Gist (optional)** – JSON storage for PLC state  
+- **Python backend** – subscribes to MQTT topics, controls outputs, bridges local and cloud brokers
+- **HTML/JavaScript frontend** – uses MQTT over WebSockets via HiveMQ
+- **HiveMQ Cloud MQTT Broker** – online communication
 
-### Open Source Projects / Packages
+### Packages and Open Source Projects  
 
-- **Python GPIO library** – for controlling switches  
-- **Python** – backend and optionally frontend scripts  
+- **Paho-MQTT – Python MQTT client**
+- **HiveMQ MQTT** services 
 - **HTML / CSS** – frontend web interface  
 - **GitHub Gist API** – to send real-time updates of PLC states  
 
@@ -60,13 +62,15 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - Use **Python as backend** to communicate with PLC and MQTT  
 - Connect the embedded system to the network for web access  
 - Use **MQTT** for communication between CM5 and PLC  
-- Run **MQTT broker** on the system to enable real-time input/output updates  
+- Run **MQTT broker** on the system to enable real-time input/output updates
+- Use of dual MQTT broker architecture (local + cloud) Integration of HiveMQ Cloud
+
 
 ### Functionality
 
-- **Read PLC inputs** → Python backend → JSON → web interface  
-- **Control PLC outputs** → web interface → JSON → Python backend → MQTT → PLC  
-- **Real-time synchronization**: changes from PLC or website are immediately reflected
+- **Read PLC inputs** → Local MQTT → Python backend → HiveMQ → Web interface
+- **Control PLC outputs** → Web interface → HiveMQ → Python backend → Local MQTT → PLC
+
 
 ### Repository Structure and Organization
 
@@ -97,11 +101,11 @@ Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT in
 - Implement Python scripts to read PLC inputs via MQTT  
 - Implement Python scripts to control PLC outputs  
 - Test end-to-end communication with PLC  
-- (Optional) Integrate GitHub Gist JSON storage
+- Configure bridge between local broker and HiveMQ
 
 ### Sprint 3: Web Interface & Deployment
 - Develop HTML/JS frontend to display PLC inputs and control outputs  
-- Connect frontend to Python backend via JSON API  
+- Connect frontend to HiveMQ using MQTT over WebSockets
 - Test full system: PLC ↔ CM5 ↔ Website  
 - Deploy frontend on GitHub Pages
 

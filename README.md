@@ -141,3 +141,6 @@ Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT in
 - [Mosquitto MQTT](https://mosquitto.org/)  
 - [GitHub Gist API](https://docs.github.com/en/rest/gists)  
 - [Python Paho MQTT Library](https://www.eclipse.org/paho/index.php?page=clients/python/index.php)
+  
+## Schedule Page
+  https://github.com/users/brainhasan/projects/2/views/1?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C255968077%5D

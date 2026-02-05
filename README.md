@@ -150,7 +150,7 @@ Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT in
 This project contains third-party components:
 
 - Buildroot (GPLv2 and others)
-- Linux Kernel (GPLv2)
+- Linux Kernel for Raspberry Pi (GPLv2)
 - Broadcom drivers (vendor license)
 
 These components are included as submodules or external sources and

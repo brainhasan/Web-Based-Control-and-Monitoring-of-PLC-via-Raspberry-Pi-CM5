@@ -24,7 +24,7 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Raspberry Pi Compute Module 5 (CM5)**  
   - Quad-core ARM Cortex-A76 CPU  
   - VideoCore VII GPU  
-  - Optional Wi-Fi / Bluetooth  
+  - Wi-Fi / Bluetooth  
   - RAM: 4GB or 8GB  
 - **Siemens LOGO! PLC**  
 - **CM5 Carrier Board** for Ethernet/Wi-Fi and GPIO connections  
@@ -42,14 +42,14 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 
 - **Mosquitto MQTT broker** – PLC ↔ CM5 communication  
 - **Python backend** – subscribes to MQTT topics, controls outputs, bridges local and cloud brokers
-- **HTML/JavaScript frontend** – uses MQTT over WebSockets via HiveMQ
+- **JavaScript frontend** – uses MQTT over WebSockets via HiveMQ
 - **HiveMQ Cloud MQTT Broker** – online communication
 
 ### Packages and Open Source Projects  
 
 - **Paho-MQTT – Python MQTT client**
 - **HiveMQ MQTT** services 
-- **HTML / CSS** – frontend web interface  
+- **JavaScript** – frontend web interface  
 - **GitHub Gist API** – to send real-time updates of PLC states  
 
 ### Previous Assignment Content

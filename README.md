@@ -144,3 +144,18 @@ Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT in
   
 ## Schedule Page
   https://github.com/users/brainhasan/projects/2/views/1?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C255968077%5D
+
+## Licensing
+
+This project contains third-party components:
+
+- Buildroot (GPLv2 and others)
+- Linux Kernel (GPLv2)
+- Broadcom drivers (vendor license)
+
+These components are included as submodules or external sources and
+remain under their original licenses.
+
+All original code and configuration in this repository is licensed under:
+
+MIT License © 2026 Hasan Edrees

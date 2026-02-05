@@ -85,8 +85,9 @@ Web frontend
 ocumentation & Wiki
 
 ### Team Members & Roles
-Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
 
+- **Hasan Edrees** — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
+- 
 ---
 
 ## Implementation Plan

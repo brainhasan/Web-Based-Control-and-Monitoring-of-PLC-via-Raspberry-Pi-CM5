@@ -24,7 +24,7 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Raspberry Pi Compute Module 5 (CM5)**  
   - Quad-core ARM Cortex-A76 CPU  
   - VideoCore VII GPU  
-  - Optional Wi-Fi / Bluetooth  
+  - Wi-Fi / Bluetooth  
   - RAM: 4GB or 8GB  
 - **Siemens LOGO! PLC**  
 - **CM5 Carrier Board** for Ethernet/Wi-Fi and GPIO connections  
@@ -42,14 +42,14 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 
 - **Mosquitto MQTT broker** – PLC ↔ CM5 communication  
 - **Python backend** – subscribes to MQTT topics, controls outputs, bridges local and cloud brokers
-- **HTML/JavaScript frontend** – uses MQTT over WebSockets via HiveMQ
+- **JavaScript frontend** – uses MQTT over WebSockets via HiveMQ
 - **HiveMQ Cloud MQTT Broker** – online communication
 
 ### Packages and Open Source Projects  
 
 - **Paho-MQTT – Python MQTT client**
 - **HiveMQ MQTT** services 
-- **HTML / CSS** – frontend web interface  
+- **JavaScript** – frontend web interface  
 - **GitHub Gist API** – to send real-time updates of PLC states  
 
 ### Previous Assignment Content
@@ -85,8 +85,9 @@ Web frontend
 ocumentation & Wiki
 
 ### Team Members & Roles
-Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
 
+- **Hasan Edrees** — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
+- 
 ---
 
 ## Implementation Plan
@@ -144,3 +145,18 @@ Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT in
   
 ## Schedule Page
   https://github.com/users/brainhasan/projects/2/views/1?visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C255968077%5D
+
+## Licensing
+
+This project contains third-party components:
+
+- Buildroot (GPLv2 and others)
+- Linux Kernel for Raspberry Pi (GPLv2)
+- Broadcom drivers (vendor license)
+
+These components are included as submodules or external sources and
+remain under their original licenses.
+
+All original code and configuration in this repository is licensed under:
+
+MIT License © 2026 Hasan Edrees

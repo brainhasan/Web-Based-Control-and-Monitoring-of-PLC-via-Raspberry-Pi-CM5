@@ -50,7 +50,7 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **Paho-MQTT – Python MQTT client**
 - **HiveMQ MQTT** services 
 - **JavaScript** – frontend web interface  
-- **GitHub Gist API** – to send real-time updates of PLC states  
+- **websocket and MQTT** – to send real-time updates of PLC states  
 
 ### Previous Assignment Content
 

@@ -52,19 +52,6 @@ The system enables users to remotely monitor and control PLC inputs and outputs 
 - **JavaScript** – frontend web interface  
 - **websocket and MQTT** – to send real-time updates of PLC states  
 
-### Previous Assignment Content
-
-- **Buildroot setup** – cross-compiling Linux images for Raspberry Pi  
-- **Running an application on startup** – using init scripts or systemd  
-
-### New Content Beyond Course
-
-- Use **Python as backend** to communicate with PLC and MQTT  
-- Connect the embedded system to the network for web access  
-- Use **MQTT** for communication between CM5 and PLC  
-- Run **MQTT broker** on the system to enable real-time input/output updates
-- Use of dual MQTT broker architecture (local + cloud) Integration of HiveMQ Cloud
-
 
 ### Functionality
 
@@ -84,10 +71,6 @@ Web frontend
 
 ocumentation & Wiki
 
-### Team Members & Roles
-
-- **Hasan Edrees** — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
-- 
 ---
 
 ## Implementation Plan
@@ -130,9 +113,8 @@ Python backend
 
 Web frontend
 
-## Documentation & Wiki
-Team Members & Roles
-Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
+### Documentation & Wiki
+Team Members & Roles Hasan Edrees — Sole developer responsible for Buildroot image, backend MQTT integration, and web interface implementation
 ---
 
 ## References
